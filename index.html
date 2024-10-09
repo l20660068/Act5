@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Interactivo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('imagen.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .counter-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-container">
+        <h1>Contador: <span id="counter">0</span></h1>
+        <button id="subirparriba">Subirparriba</button>
+        <button id="bajarpabajo">Bajarpabajo</button>
+    </div>
+
+    <script>
+        let counter = 0;
+        const counterDisplay = document.getElementById('counter');
+        const subirparriba = document.getElementById('subirparriba');
+        const bajarpabajo = document.getElementById('bajarpabajo');
+
+        subirparriba.addEventListener('click', () => {
+            counter++;
+            counterDisplay.textContent = counter;
+        });
+
+        bajarpabajo.addEventListener('click', () => {
+            counter--;
+            counterDisplay.textContent = counter;
+        });
+    </script>
+</body>
+</html>
